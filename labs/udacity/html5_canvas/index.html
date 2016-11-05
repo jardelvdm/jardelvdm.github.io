@@ -8,10 +8,17 @@
 </head>
 <body>
 	<script>
-		var c = document.getELementById('c');
-			ctx = c.getContext('2d');
+		var ctx = document.getElementById('c').getContext('2d')
 
-			ctx.fillRect(100,100,100,100);
+		ctx.strokeRect(50,50,100,100);
+
+		ctx.moveTo(75,75)
+		ctx.lineTo(115,115)
+		ctx.lineTo(115,75)
+		ctx.lineTo(75,75)
+		ctx.fill()
+		// ctx.stroke()
+		// https://classroom.udacity.com/courses/ud292/lessons/3163218691/concepts/31699688050923
 	</script>
 </body>
 </html>
