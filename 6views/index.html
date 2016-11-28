@@ -2,30 +2,23 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>6 View</title>
-
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-		}
-	</style>
+	<title>6 Views</title>
+	<link rel="stylesheet" href="stylesheets/screen.css">
 </head>
 <body>
 	<div id="header">
 		<div id="video">
-			<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=1366&h=768&w=1366&h=768" alt="placeholdit">
+			<img src="imagens/demo.jpg" alt="placeholdit">
 		</div>
+
 		<nav id="menu">
-			<ull>
-				<li>
-					<button>Início</button>
-					<button>Sobre</button>
-					<button>Experimentos</button>
-					<button>Quem Somos</button>
-					<button>Contato</button>
-				</li>
-			</ull>
+			<ul>
+				<li><button>Início</button></li>
+				<li><button>Sobre</button></li>
+				<li><button>Experimentos</button></li>
+				<li><button>Quem Somos</button></li>
+				<li><button>Contato</button></li>
+			</ul>
 		</nav>
 	</div>
 
@@ -34,7 +27,9 @@
 			<h1 class="titulo">Sobre nós</h1>
 			<h2 class="subtitulo">E os motivos disso tudo</h2>
 		</hgroup>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate et, accusantium, obcaecati adipisci, rerum repellendus nobis magnam non cumque illo numquam temporibus possimus quis sunt animi architecto earum. Dolore, possimus!</p>
+		<div class="container">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque nisi id sodales vehicula. Aenean elit urna, sagittis a tincidunt eget, iaculis hendrerit velit. Nam eleifend neque nulla. Cras et vulputate eros. Curabitur faucibus neque vitae mi semper, sit amet molestie ex blandit. Donec accumsan id elit sed luctus. Sed ultrices, nibh vitae feugiat volutpat, est risus laoreet purus, ac posuere nisl sapien non neque. Nulla ut ex ac ligula fringilla ultricies. Praesent sit amet fermentum est.</p>
+		</div>
 	</section>
 
 	<section id="experimentos">
@@ -44,7 +39,7 @@
 		</hgroup>
 		<div id="videos">
 			<ul class="flexslider">
-				<li><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=1366&h=768&w=1366&h=768" alt="placeholdit"></li>
+				<li><img src="imagens/demo-XP.jpg" alt="placeholdit"></li>
 			</ul>
 		</div>
 	</section>
@@ -54,22 +49,22 @@
 			<h1 class="titulo">Quem Somos</h1>
 			<h2 class="subtitulo">Só os periculoso</h2>
 		</hgroup>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta praesentium nam, amet quibusdam rem, tempore quasi architecto perferendis iste explicabo doloremque pariatur, tempora similique harum autem? Eius culpa dolorum mollitia!</p>
-		<img src="imagens/gurizada.png" alt="Só os periculoso">
+		<div class="container">
+			<p>Nam accumsan lectus maximus molestie egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus aliquet, urna a laoreet condimentum, ex magna iaculis neque, sit amet elementum purus arcu in magna. Mauris mollis vel ipsum eget mattis. Pellentesque fringilla, libero nec ultricies vestibulum, lorem dolor pellentesque felis, eget ullamcorper urna nulla vel nibh. Donec ac lectus suscipit, iaculis metus a, ornare mauris.</p>
+			<img src="imagens/gurizada.png" alt="Só os periculoso">
+		</div>
 	</section>
 
-	<section id="contato">
+	<section id="contato" class="container">
 		<hgroup>
 			<h1 class="titulo">Contato</h1>
 			<h2 class="subtitulo">;)</h2>
 		</hgroup>
 		<ul class="redes">
-			<li>
-				<a href="#" target="_blank">Twitter</a>
-				<a href="#" target="_blank">Youtube</a>
-				<a href="#" target="_blank">Facebook</a>
-				<a href="#" target="_blank">Instagram</a>
-			</li>
+			<li class="twitter"><a href="https://twitter.com/equipe6view" target="_blank">Twitter</a></li>
+			<li class="youtube"><a href="https://www.youtube.com/channel/UCNDPYzZsyfIWkYJOnFnU5mw" target="_blank">Youtube</a></li>
+			<li class="facebook"><a href="https://www.facebook.com/equipe6view" target="_blank">Facebook</a></li>
+			<li class="instagram"><a href="https://www.instagram.com/equipe6view/" target="_blank">Instagram</a></li>
 		</ul>
 	</section>
 </body>

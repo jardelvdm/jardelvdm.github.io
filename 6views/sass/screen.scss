@@ -1,0 +1,154 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+html {
+	font-size: 10px;
+	font-family: sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width:1200px;
+	padding: 0 2rem;
+	box-sizing:border-box;
+	margin: auto;
+	position: relative;
+}
+
+#header {
+	#menu {
+	    margin-top: -5.1rem;
+	    background: rgba(255,255,255,0.4);
+	    position: relative;
+	    z-index: 1;
+	    border-top: solid 2px #FFF; 
+	    padding-bottom: 1.2rem;
+
+		ul {
+			text-align: justify;
+
+			&:after, & > li:after {
+				content: "";
+				width: 100%;
+				display: inline-block;
+			}
+
+			& > li {
+				width: 15rem; /* Declare your value. Can be in relative units. */
+				display: inline-block;
+				vertical-align: top;
+    			text-align: center;
+
+				/* IE fix. */
+				*display: inline;
+				zoom: 1;
+			}
+
+			button {
+				outline: none;
+				background: none;
+				border: none; 
+				transform: translateY(50%);
+			    font-weight: bold;
+			    color: #FFF;
+			    font-size: 2rem;
+			}
+		}
+	}
+}
+
+section {
+	font-size: 2.7rem;
+	padding-top: 9.7rem;
+
+	hgroup {
+		text-align: center;
+
+		.titulo{
+			font-size: 6.9rem;
+			margin-bottom: 3.1rem;
+			text-transform: uppercase;
+		}
+		.subtitulo{
+			font-size: 3.7rem;
+			margin-bottom: 6.6rem;
+		}
+	}
+}
+
+img {
+    max-width: 100%;
+}
+
+#sobre {
+	p {
+	    max-width: 92.5rem;
+	    margin: auto;
+	    text-align: center;
+	}
+}
+
+#videos {
+	text-align: center;
+}
+
+#quem_somos {
+	display: table;
+	width: 100%;
+	position: relative;
+    height: 130vh;
+
+	p {
+		max-width: 52.4rem;
+		float: left;
+	}
+
+	img {
+		position: absolute;
+	    top: -14rem;
+	    right: -12rem;
+	}
+}
+
+#contato {
+	.redes {
+		font-size: 0;
+		li {
+			width: 25%;
+			display: inline-block;
+			text-align: center;
+			height: 12rem;
+
+			&.twitter {
+				background: #55acee url(../imagens/twitter.jpg) no-repeat;
+			}
+			&.youtube {
+				background: #cf3427 url(../imagens/youtube.jpg) no-repeat;
+			}
+			&.facebook {
+				background: #3a589b url(../imagens/facebook.jpg) no-repeat;
+			}
+			&.instagram {
+				background: #517fa6 url(../imagens/instagram.jpg) no-repeat;
+			}
+
+			a {
+			    display: block;
+			    width: 100%;
+			    height: 100%;
+			}
+		}
+	}
+}
