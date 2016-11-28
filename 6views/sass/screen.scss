@@ -100,6 +100,11 @@ img {
 	}
 }
 
+#experimentos {
+	background: url(../imagens/bg_experimentos.png);
+	padding-top: 16.2rem;
+}
+
 #videos {
 	text-align: center;
 }
@@ -130,6 +135,7 @@ img {
 			display: inline-block;
 			text-align: center;
 			height: 12rem;
+			transition: opacity .2s ease-out;
 
 			&.twitter {
 				background: #55acee url(../imagens/twitter.jpg) no-repeat;
@@ -148,6 +154,17 @@ img {
 			    display: block;
 			    width: 100%;
 			    height: 100%;
+			    background: transparent;
+			}
+		}
+
+		&:hover {
+			li {
+				opacity: .5;
+
+				&:hover {
+					opacity: 1;
+				}
 			}
 		}
 	}
