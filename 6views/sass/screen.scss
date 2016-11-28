@@ -97,6 +97,7 @@ img {
 	    max-width: 92.5rem;
 	    margin: auto;
 	    text-align: center;
+	    margin-bottom: 2rem;
 	}
 }
 
@@ -115,9 +116,13 @@ img {
 	position: relative;
     height: 130vh;
 
-	p {
+	.tem_texto {
 		max-width: 52.4rem;
 		float: left;
+
+		p {
+			margin-bottom: 2rem;
+		}
 	}
 
 	img {
