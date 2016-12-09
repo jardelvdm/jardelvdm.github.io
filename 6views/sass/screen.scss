@@ -7,7 +7,7 @@
 
 html {
 	font-size: 10px;
-	font-family: sans-serif;
+    font-family: 'Myriad Pro';
 }
 
 body {
@@ -64,7 +64,37 @@ body {
 			    font-weight: bold;
 			    color: #FFF;
 			    font-size: 2rem;
+			    cursor: pointer; 
+			    margin-top: -.5rem;
+
+				&::after {
+				    display: block;
+				    content: '';
+				    width: 0;
+				    height: 0;
+				    border: solid 5px transparent;
+				    margin: auto;
+				    border-top-color: transparent;
+				}
+
+				&:hover::after {
+				    border-top-color: #FFF;
+				}
 			}
+		}
+	}
+
+	#video {
+		position: relative;
+
+		&::after {
+		    width: 100%;
+		    height: 100%;
+		    background: url('../imagens/losangos.png');
+		    display: block;
+		    position: absolute;
+		    content: '';
+		    top: 0;
 		}
 	}
 }
@@ -108,6 +138,21 @@ img {
 
 #videos {
 	text-align: center;
+
+	li {
+		padding-bottom: 45%;
+	    display: table;
+	    position: relative;
+	    width: 100%;
+
+	    iframe {
+		    width: 100%;
+		    height: 100%;
+		    left: 0;
+		    position: absolute;
+		    top: 0;
+	    }
+	}
 }
 
 #quem_somos {

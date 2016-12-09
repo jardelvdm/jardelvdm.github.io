@@ -13,11 +13,11 @@
 
 		<nav id="menu">
 			<ul>
-				<li><button>Início</button></li>
-				<li><button>Sobre</button></li>
-				<li><button>Experimentos</button></li>
-				<li><button>Quem Somos</button></li>
-				<li><button>Contato</button></li>
+				<li><button onclick="goto('inicio')">Início</button></li>
+				<li><button onclick="goto('sobre')">Sobre</button></li>
+				<li><button onclick="goto('experimentos')">Experimentos</button></li>
+				<li><button onclick="goto('quem_somos')">Quem Somos</button></li>
+				<li><button onclick="goto('contato')">Contato</button></li>
 			</ul>
 		</nav>
 	</div>
@@ -36,11 +36,15 @@
 	<section id="experimentos">
 		<hgroup>
 			<h1 class="titulo">Experimentos</h1>
-			<h2 class="subtitulo">Vamos dar um passeio</h2>
+			<h2 class="subtitulo">Que tal um passeio?</h2>
 		</hgroup>
 		<div id="videos">
 			<ul class="flexslider">
-				<li><img src="imagens/demo-XP.jpg" alt="placeholdit"></li>
+				<li>
+					<iframe width="560" height="315" 
+							src="https://www.youtube.com/embed/T9t4u7Uydq4" 
+							frameborder="0" allowfullscreen></iframe>
+				</li>
 			</ul>
 		</div>
 	</section>
@@ -74,4 +78,25 @@
 		</ul>
 	</section>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script>
+	function goto(item){
+		console.log(item)
+		if(!window.posicoes){
+			var altura_menu = 112;
+			window.posicoes = {
+				inicio: 0,
+				sobre: document.getElementById('sobre').offsetTop,
+				experimentos: document.getElementById('experimentos').offsetTop,
+				quem_somos: document.getElementById('quem_somos').offsetTop,
+				contato: document.getElementById('contato').offsetTop
+			}
+		}
+		setTimeout(function(){
+			$('body').stop().animate({scrollTop:(window.posicoes[item])}, '500', 'swing');
+		},250);
+	}
+</script>
+
 </html>

@@ -70,7 +70,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 8, ../sass/screen.scss */
 html {
   font-size: 10px;
-  font-family: sans-serif;
+  font-family: 'Myriad Pro';
 }
 
 /* line 13, ../sass/screen.scss */
@@ -132,35 +132,65 @@ body {
   font-weight: bold;
   color: #FFF;
   font-size: 2rem;
+  cursor: pointer;
+  margin-top: -.5rem;
+}
+/* line 70, ../sass/screen.scss */
+#header #menu ul button::after {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  border: solid 5px transparent;
+  margin: auto;
+  border-top-color: transparent;
+}
+/* line 80, ../sass/screen.scss */
+#header #menu ul button:hover::after {
+  border-top-color: #FFF;
+}
+/* line 87, ../sass/screen.scss */
+#header #video {
+  position: relative;
+}
+/* line 90, ../sass/screen.scss */
+#header #video::after {
+  width: 100%;
+  height: 100%;
+  background: url("../imagens/losangos.png");
+  display: block;
+  position: absolute;
+  content: '';
+  top: 0;
 }
 
-/* line 72, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 section {
   font-size: 2.7rem;
   padding-top: 9.7rem;
 }
-/* line 76, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 section hgroup {
   text-align: center;
 }
-/* line 79, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 section hgroup .titulo {
   font-size: 6.9rem;
   margin-bottom: 3.1rem;
   text-transform: uppercase;
 }
-/* line 84, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 section hgroup .subtitulo {
   font-size: 3.7rem;
   margin-bottom: 6.6rem;
 }
 
-/* line 91, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 img {
   max-width: 100%;
 }
 
-/* line 96, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 #sobre p {
   max-width: 92.5rem;
   margin: auto;
@@ -168,45 +198,60 @@ img {
   margin-bottom: 2rem;
 }
 
-/* line 104, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
 #experimentos {
   background: url(../imagens/bg_experimentos.png);
   padding-top: 16.2rem;
 }
 
-/* line 109, ../sass/screen.scss */
+/* line 139, ../sass/screen.scss */
 #videos {
   text-align: center;
 }
+/* line 142, ../sass/screen.scss */
+#videos li {
+  padding-bottom: 45%;
+  display: table;
+  position: relative;
+  width: 100%;
+}
+/* line 148, ../sass/screen.scss */
+#videos li iframe {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
 
-/* line 113, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 #quem_somos {
   display: table;
   width: 100%;
   position: relative;
   height: 130vh;
 }
-/* line 119, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 #quem_somos .tem_texto {
   max-width: 52.4rem;
   float: left;
 }
-/* line 123, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 #quem_somos .tem_texto p {
   margin-bottom: 2rem;
 }
-/* line 128, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 #quem_somos img {
   position: absolute;
   top: -14rem;
   right: -12rem;
 }
 
-/* line 136, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 #contato .redes {
   font-size: 0;
 }
-/* line 138, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 #contato .redes li {
   width: 25%;
   display: inline-block;
@@ -214,34 +259,34 @@ img {
   height: 12rem;
   transition: opacity .2s ease-out;
 }
-/* line 145, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
 #contato .redes li.twitter {
   background: #55acee url(../imagens/twitter.jpg) no-repeat;
 }
-/* line 148, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 #contato .redes li.youtube {
   background: #cf3427 url(../imagens/youtube.jpg) no-repeat;
 }
-/* line 151, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 #contato .redes li.facebook {
   background: #3a589b url(../imagens/facebook.jpg) no-repeat;
 }
-/* line 154, ../sass/screen.scss */
+/* line 199, ../sass/screen.scss */
 #contato .redes li.instagram {
   background: #517fa6 url(../imagens/instagram.jpg) no-repeat;
 }
-/* line 158, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 #contato .redes li a {
   display: block;
   width: 100%;
   height: 100%;
   background: transparent;
 }
-/* line 167, ../sass/screen.scss */
+/* line 212, ../sass/screen.scss */
 #contato .redes:hover li {
   opacity: .5;
 }
-/* line 170, ../sass/screen.scss */
+/* line 215, ../sass/screen.scss */
 #contato .redes:hover li:hover {
   opacity: 1;
 }
