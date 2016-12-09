@@ -38,8 +38,8 @@
 			<h1 class="titulo">Experimentos</h1>
 			<h2 class="subtitulo">Que tal um passeio?</h2>
 		</hgroup>
-		<div id="videos">
-			<ul class="flexslider">
+		<div id="videos" class="flexslider">
+			<ul class="slides">
 				<li>
 					<iframe width="560" height="315" 
 							src="https://www.youtube.com/embed/T9t4u7Uydq4" 
@@ -79,7 +79,9 @@
 	</section>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="../flexslider/flexslider.css"></script>
+<script src="../flexslider/jquery.flexslider.js"></script>
 <script>
 	function goto(item){
 		console.log(item)
@@ -97,6 +99,12 @@
 			$('body').stop().animate({scrollTop:(window.posicoes[item])}, '500', 'swing');
 		},250);
 	}
+
+	$(window).load(function() {
+	  $('.flexslider').flexslider({
+	    animation: "slide"
+	  });
+	});
 </script>
 
 </html>
