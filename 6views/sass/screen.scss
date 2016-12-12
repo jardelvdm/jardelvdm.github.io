@@ -181,23 +181,17 @@ img {
 	.redes {
 		font-size: 0;
 		li {
-			width: 25%;
+			width: 50%;
 			display: inline-block;
 			text-align: center;
 			height: 12rem;
 			transition: opacity .2s ease-out;
 
-			&.twitter {
-				background: #55acee url(../imagens/twitter.jpg) no-repeat;
-			}
 			&.youtube {
-				background: #cf3427 url(../imagens/youtube.jpg) no-repeat;
+				background: #f03021 url(../imagens/youtube.jpg) center no-repeat;
 			}
 			&.facebook {
-				background: #3a589b url(../imagens/facebook.jpg) no-repeat;
-			}
-			&.instagram {
-				background: #517fa6 url(../imagens/instagram.jpg) no-repeat;
+				background: #21579f url(../imagens/facebook.jpg) center no-repeat;
 			}
 
 			a {
