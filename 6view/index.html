@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>6 Views</title>
+	<link rel="stylesheet" href="stylesheets/screen.css">
+</head>
+<body>
+	<div id="header">
+		<div id="video">
+			<img src="imagens/demo.jpg" alt="placeholdit">
+		</div>
+
+		<nav id="menu">
+			<ul>
+				<li><button onclick="goto('inicio')">Início</button></li>
+				<li><button onclick="goto('sobre')">Sobre</button></li>
+				<li><button onclick="goto('experimentos')">Experimentos</button></li>
+				<li><button onclick="goto('quem_somos')">Quem Somos</button></li>
+				<li><button onclick="goto('contato')">Contato</button></li>
+			</ul>
+		</nav>
+	</div>
+
+	<section id="sobre">
+		<hgroup>
+			<h1 class="titulo">Sobre nós</h1>
+			<h2 class="subtitulo">E os motivos disso tudo</h2>
+		</hgroup>
+		<div class="container">
+			<p>Somos um grupo de estudantes do curso de <a href="http://unisinos.br/comdig/" target="_blank" rel="nofollow">Comunicação Digital</a>, na Unisinos de São Leopoldo, desenvolvendo um produto audiovisual imersivo, pensado para levar grandes experiências para pessoas que já não tenham possibilidade de realizá-las.</p>
+			<p>Optamos pelo nome "6 view" para o nosso produto, pensando na quantidade de pontos de vista disponíveis para o usuário. São 6 modos de campo para explorar visualmente - o que enriquece e completa uma experiência em 360 graus.</p>
+		</div>
+	</section>
+
+	<section id="experimentos">
+		<hgroup>
+			<h1 class="titulo">Experimentos</h1>
+			<h2 class="subtitulo">Que tal um passeio?</h2>
+		</hgroup>
+		<div id="videos" class="flexslider">
+			<ul class="slides">
+				<li>
+					<iframe width="560" height="315" 
+							src="https://www.youtube.com/embed/kMXmNj0ICOw" 
+							frameborder="0" allowfullscreen></iframe>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="quem_somos">
+		<hgroup>
+			<h1 class="titulo">Quem Somos</h1>
+			<h2 class="subtitulo"></h2>
+		</hgroup>
+		<div class="container">
+			<div class="tem_texto">
+				<p>Alunos do 4° semestre de Comunicação Digital, estudamos desde aspectos culturais a tecnológicos, abordagens artísticas, históricas, teorias de comunicação, sociabilidades e o reflexo disso tudo enquanto formadores de hábitos e construtores sociais. Semestralmente, desenvolvemos produtos digitais que envolvam os temas abordados e que tenham um mote focado em utilização pelo público, mercado e diversos atores específicados conforme o tema estudado e proposta do produto.</p>
+
+				<p>Neste semestre, sob a temática de Audiovisulidades, nós 4, Jardel, Jerônymo, Lucas e Shahin, nos propomos a desenvolver uma experiência imersiva em 360 graus, fazendo uso de tendências tecnoculturais.</p>
+			</div>
+
+			<img src="imagens/gurizada.png" alt="Só os periculoso">
+		</div>
+	</section>
+
+	<section id="contato" class="container">
+		<hgroup>
+			<h1 class="titulo">Contato</h1>
+			<h2 class="subtitulo">Acompanhe-nos nas principais redes sociais ;)</h2>
+		</hgroup>
+		<ul class="redes">
+			<li class="youtube"><a href="https://www.youtube.com/channel/UCNDPYzZsyfIWkYJOnFnU5mw" target="_blank">Youtube</a></li>
+			<li class="facebook"><a href="https://www.facebook.com/equipe6view" target="_blank">Facebook</a></li>
+		</ul>
+	</section>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="../flexslider/flexslider.css"></script>
+<script src="../flexslider/jquery.flexslider.js"></script>
+<script>
+	function goto(item){
+		console.log(item)
+		if(!window.posicoes){
+			var altura_menu = 112;
+			window.posicoes = {
+				inicio: 0,
+				sobre: document.getElementById('sobre').offsetTop,
+				experimentos: document.getElementById('experimentos').offsetTop,
+				quem_somos: document.getElementById('quem_somos').offsetTop,
+				contato: document.getElementById('contato').offsetTop
+			}
+		}
+		setTimeout(function(){
+			$('body').stop().animate({scrollTop:(window.posicoes[item])}, '500', 'swing');
+		},250);
+	}
+
+	$(window).load(function() {
+	  $('.flexslider').flexslider({
+	    animation: "slide"
+	  });
+	});
+</script>
+
+</html>

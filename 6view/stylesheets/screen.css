@@ -1,0 +1,284 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, C:/tools/ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/tools/ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/tools/ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/tools/ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/tools/ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/tools/ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/tools/ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/tools/ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/tools/ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 8, ../sass/screen.scss */
+html {
+  font-size: 10px;
+  font-family: 'Myriad Pro';
+}
+
+/* line 13, ../sass/screen.scss */
+body {
+  overflow-x: hidden;
+}
+
+/* line 17, ../sass/screen.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 22, ../sass/screen.scss */
+.container {
+  max-width: 1200px;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  margin: auto;
+  position: relative;
+}
+
+/* line 31, ../sass/screen.scss */
+#header #menu {
+  margin-top: -5.1rem;
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+  z-index: 1;
+  border-top: solid 2px #FFF;
+  padding-bottom: 1.2rem;
+}
+/* line 39, ../sass/screen.scss */
+#header #menu ul {
+  text-align: justify;
+}
+/* line 42, ../sass/screen.scss */
+#header #menu ul:after, #header #menu ul > li:after {
+  content: "";
+  width: 100%;
+  display: inline-block;
+}
+/* line 48, ../sass/screen.scss */
+#header #menu ul > li {
+  width: 15rem;
+  /* Declare your value. Can be in relative units. */
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  /* IE fix. */
+  *display: inline;
+  zoom: 1;
+}
+/* line 59, ../sass/screen.scss */
+#header #menu ul button {
+  outline: none;
+  background: none;
+  border: none;
+  transform: translateY(50%);
+  font-weight: bold;
+  color: #FFF;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-top: -.5rem;
+}
+/* line 70, ../sass/screen.scss */
+#header #menu ul button::after {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  border: solid 5px transparent;
+  margin: auto;
+  border-top-color: transparent;
+}
+/* line 80, ../sass/screen.scss */
+#header #menu ul button:hover::after {
+  border-top-color: #FFF;
+}
+/* line 87, ../sass/screen.scss */
+#header #video {
+  position: relative;
+}
+/* line 90, ../sass/screen.scss */
+#header #video::after {
+  width: 100%;
+  height: 100%;
+  background: url("../imagens/losangos.png");
+  display: block;
+  position: absolute;
+  content: '';
+  top: 0;
+}
+
+/* line 102, ../sass/screen.scss */
+section {
+  font-size: 2.7rem;
+  padding-top: 9.7rem;
+}
+/* line 106, ../sass/screen.scss */
+section hgroup {
+  text-align: center;
+}
+/* line 109, ../sass/screen.scss */
+section hgroup .titulo {
+  font-size: 6.9rem;
+  margin-bottom: 3.1rem;
+  text-transform: uppercase;
+}
+/* line 114, ../sass/screen.scss */
+section hgroup .subtitulo {
+  font-size: 3.7rem;
+  margin-bottom: 6.6rem;
+}
+
+/* line 121, ../sass/screen.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 126, ../sass/screen.scss */
+#sobre p {
+  max-width: 92.5rem;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* line 134, ../sass/screen.scss */
+#experimentos {
+  background: url(../imagens/bg_experimentos.png);
+  padding-top: 16.2rem;
+}
+
+/* line 139, ../sass/screen.scss */
+#videos {
+  text-align: center;
+}
+/* line 142, ../sass/screen.scss */
+#videos li {
+  padding-bottom: 45%;
+  display: table;
+  position: relative;
+  width: 100%;
+}
+/* line 148, ../sass/screen.scss */
+#videos li iframe {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+/* line 158, ../sass/screen.scss */
+#quem_somos {
+  display: table;
+  width: 100%;
+  position: relative;
+  height: 130vh;
+}
+/* line 164, ../sass/screen.scss */
+#quem_somos .tem_texto {
+  max-width: 52.4rem;
+  float: left;
+}
+/* line 168, ../sass/screen.scss */
+#quem_somos .tem_texto p {
+  margin-bottom: 2rem;
+}
+/* line 173, ../sass/screen.scss */
+#quem_somos img {
+  position: absolute;
+  top: -14rem;
+  right: -12rem;
+}
+
+/* line 181, ../sass/screen.scss */
+#contato .redes {
+  font-size: 0;
+}
+/* line 183, ../sass/screen.scss */
+#contato .redes li {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  height: 12rem;
+  transition: opacity .2s ease-out;
+}
+/* line 190, ../sass/screen.scss */
+#contato .redes li.youtube {
+  background: #f03021 url(../imagens/youtube.jpg) center no-repeat;
+}
+/* line 193, ../sass/screen.scss */
+#contato .redes li.facebook {
+  background: #21579f url(../imagens/facebook.jpg) center no-repeat;
+}
+/* line 197, ../sass/screen.scss */
+#contato .redes li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+/* line 206, ../sass/screen.scss */
+#contato .redes:hover li {
+  opacity: .5;
+}
+/* line 209, ../sass/screen.scss */
+#contato .redes:hover li:hover {
+  opacity: 1;
+}
