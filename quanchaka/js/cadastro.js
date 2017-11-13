@@ -1,5 +1,24 @@
-quanchaka.controller('main',['$scope', function(scope){
+quanchaka.controller('main',['$scope','tools', function(scope,tools){
+  window.scope = scope;
   scope.cartas = []
+  scope.categorias = []
+
+  refCartas.on('value',data => {
+    const lista = data.val();
+    scope.cartas = Object.keys(lista).map(item => lista[item])
+  },error => {
+    console.log('error',error)
+  })
+
+  refCategorias.on('value',data => {
+    const lista = data.val();
+
+    tools.safeApply(scope, function(){
+      scope.categorias = Object.keys(lista).map(item => lista[item])
+    })
+  },error => {
+    console.log('error',error)
+  })
 
   scope.modeloCategoria = {
     nome:'',
@@ -44,6 +63,6 @@ quanchaka.controller('main',['$scope', function(scope){
   scope.escreveCarta = () => {
     console.log('scope.carta',scope.carta)
     
-    novaCarta.set(scope.carta)
+    console.warn('escreveCarta',novaCarta.set(scope.carta))
   }
 }])

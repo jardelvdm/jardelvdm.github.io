@@ -14,4 +14,19 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 const refCartas = database.ref('cartas/');
+const refCategorias = database.ref('categorias/');
 const novaCarta = refCartas.push();
+
+
+quanchaka.service('tools', ['$http','$compile','$window','$rootScope','$q',function($http,$compile,$window,$rootScope,$q){
+	this.safeApply = (scope, fn)=>{
+        var phase = scope.$root.$$phase;
+        if (phase == '$apply' || phase == '$digest') {
+            if (fn && typeof fn === 'function') {
+                fn();
+            }
+        } else {
+            scope.$apply(fn);
+        }
+    }; // end of fn.safeApply
+}]);
