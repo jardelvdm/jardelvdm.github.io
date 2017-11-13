@@ -18,7 +18,7 @@
           <label>Categoria</label>
           <!-- <input type="text" ng-model="categoria.nome">  -->
           <select ng-model="categoria.nome">
-            <option ng-repeat="cat in categorias" value="{{cat}}">{{cat}}</option>
+            <option ng-repeat="cat in categorias track by $index" value="{{cat}}">{{cat}}</option>
           </select>
           <button ng-click="removerCategoria($index)">Remover categoria</button><br>
 

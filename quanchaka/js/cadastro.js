@@ -4,17 +4,14 @@ quanchaka.controller('main',['$scope','tools', function(scope,tools){
   scope.categorias = []
 
   refCartas.on('value',data => {
-    const lista = data.val();
-    scope.cartas = Object.keys(lista).map(item => lista[item])
+    scope.cartas = objToArray(data.val());
   },error => {
     console.log('error',error)
   })
 
   refCategorias.on('value',data => {
-    const lista = data.val();
-
     tools.safeApply(scope, function(){
-      scope.categorias = Object.keys(lista).map(item => lista[item])
+      scope.categorias = objToArray(data.val())
     })
   },error => {
     console.log('error',error)
@@ -53,7 +50,7 @@ quanchaka.controller('main',['$scope','tools', function(scope,tools){
   scope.carta = angular.copy(scope.estruturaCarta)
         
   scope.adicionarCategoria = () => {
-    scope.carta.categorias.push(angular.copy(scope.categoria))
+    scope.carta.categorias.push(angular.copy(scope.modeloCategoria))
   }   
   
   scope.removerCategoria = (index) => {
