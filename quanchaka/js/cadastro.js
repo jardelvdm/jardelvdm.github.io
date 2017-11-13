@@ -18,26 +18,26 @@ quanchaka.controller('main',['$scope', function(scope){
   scope.cartas = []
 
   scope.modeloCategoria = {
-    nome:'nome da categoria',
+    nome:'',
     infancia: {
       disponivel: true,
-      pontos: 76,
-      justificativa: "justificativa infancia"
+      pontos: 0,
+      justificativa: ""
     },
     juventude: {
       disponivel: true,
-      pontos: 12,
-      justificativa: "justificativa juventude"
+      pontos: 0,
+      justificativa: ""
     },
     adulto: {
       disponivel: true,
-      pontos: 92,
-      justificativa: "justificativa adulto"
+      pontos: 0,
+      justificativa: ""
     },
     velhice: {
       disponivel: true,
-      pontos: 1,
-      justificativa: "justificativa velhice"
+      pontos: 0,
+      justificativa: ""
     }
   }
 
