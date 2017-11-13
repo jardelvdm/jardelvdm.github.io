@@ -1,0 +1,52 @@
+<html data-ng-app="quanchaka">
+  <head>
+    <title>Quanchaka</title>
+  </head>
+  
+  <body data-ng-controller="main">
+    <h1>Cadastro de carta</h1>
+    <form action="">
+      <label for="titulo">Titulo</label>
+      <input type="text" ng-model="carta.titulo">
+    
+      <button ng-click="escreveCarta()">salvar</button>
+      
+      <hr>
+      
+      Categorias: <button type="button" ng-click="adicionarCategoria()">Adicionar categoria</button> <br>
+      <ul>
+        <li ng-repeat="categoria in carta.categorias track by $index">
+          <label>Nome da categoria</label>
+          <input type="text" ng-model="categoria.nome"> <button ng-click="removerCategoria($index)">Remover categoria</button><br>
+
+
+          <h3>Fase infantil</h3>
+          <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.infancia.justificativa">
+          <label>pontos</label><input type="number" class="pontos" ng-model="categoria.infancia.pontos">
+          <label>disponivel</label><input type="checkbox" ng-checked="categoria.infancia.disponivel" ng-model="categoria.infancia.disponivel">
+          <br>
+          <h3>Fase juventude</h3>
+          <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.juventude.justificativa">
+          <label>pontos</label><input type="number" class="pontos" ng-model="categoria.juventude.pontos">
+          <label>disponivel</label><input type="checkbox" ng-checked="categoria.juventude.disponivel" ng-model="categoria.juventude.disponivel">
+          <br>
+          <h3>Fase adulta</h3>
+          <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.adulto.justificativa">
+          <label>pontos</label><input type="number" class="pontos" ng-model="categoria.adulto.pontos">
+          <label>disponivel</label><input type="checkbox" ng-checked="categoria.adulto.disponivel" ng-model="categoria.adulto.disponivel">
+          <br>
+          <h3>Fase velhice</h3>
+          <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.velhice.justificativa">
+          <label>pontos</label><input type="number" class="pontos" ng-model="categoria.velhice.pontos">
+          <label>disponivel</label><input type="checkbox" ng-checked="categoria.velhice.disponivel" ng-model="categoria.velhice.disponivel">
+          <hr>
+        </li>
+      </ul>
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/cadastro.js"></script>
+  </body>
+</html>
