@@ -17,6 +17,7 @@ const refCartas = database.ref('cartas/');
 const refCategorias = database.ref('categorias/');
 const novaCarta = refCartas.push();
 const objToArray = obj => Object.keys(obj).map(item => obj[item])
+const randomNumber = (min,max) => Math.floor(Math.random() * (max - min)) + min;
 
 
 quanchaka.service('tools', ['$http','$compile','$window','$rootScope','$q',function($http,$compile,$window,$rootScope,$q){
