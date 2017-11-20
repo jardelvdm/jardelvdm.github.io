@@ -46,6 +46,19 @@
         </li>
       </ul>
     </form>
+
+    
+    <div id="atuais">
+      <h2>Cartas já cadastradas</h2>
+      <input type="search" ng-model="busca" placeholder="procurar">
+      <ul>
+        <li ng-repeat="carta in cartas | filter: busca">
+          {{carta.titulo}}
+        </li>
+      </ul>
+    </div>
+
+
     <script src="js/firebase.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/angular.min.js"></script>

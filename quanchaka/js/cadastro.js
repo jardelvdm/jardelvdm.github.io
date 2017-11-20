@@ -4,7 +4,9 @@ quanchaka.controller('main',['$scope','tools', function(scope,tools){
   scope.categorias = []
 
   refCartas.on('value',data => {
-    scope.cartas = objToArray(data.val());
+    tools.safeApply(scope, function(){
+      scope.cartas = objToArray(data.val());
+    })
   },error => {
     console.log('error',error)
   })
