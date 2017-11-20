@@ -8,12 +8,14 @@
 		<header>
 			<ul>
 				<li><button ng-click="sorteiaCarta()">Sortear carta</button></li>
-				<li><button></button></li>
+				<li><button ng-click="recomecarJogo()">Recomeçar jogo</button></li>
 				<li><button></button></li>
 			</ul>
 		</header>
 
-		<div id="carta"></div>
+		<div id="carta" ng-if="carta">
+			{{carta.titulo}}
+		</div>
 	
 
 		<script src="js/firebase.js"></script>

@@ -16,7 +16,11 @@ const database = firebase.database();
 const refCartas = database.ref('cartas/');
 const refCategorias = database.ref('categorias/');
 const novaCarta = refCartas.push();
-const objToArray = obj => Object.keys(obj).map(item => obj[item])
+const objToArray = obj => Object.keys(obj).map(item => {
+    obj[item]
+    obj[item].id = item;
+    return obj[item];
+})
 const randomNumber = (min,max) => Math.floor(Math.random() * (max - min)) + min;
 
 
