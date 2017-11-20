@@ -9,7 +9,6 @@
 		<header>
 			<ul>
 				<li><button ng-click="sorteiaCarta()">Sortear carta</button></li>
-				<li><button ng-click="recomecarJogo()">Recomeçar jogo</button></li>
 				<li><button></button></li>
 			</ul>
 		</header>
@@ -20,6 +19,7 @@
 
 		<div id="fimDeJogo" ng-if="fimDeJogo">
 			Fim de jogo!
+			<button ng-click="recomecarJogo()">Recomeçar jogo</button>
 		</div>
 	
 
