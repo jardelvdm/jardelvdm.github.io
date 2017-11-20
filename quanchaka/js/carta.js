@@ -24,7 +24,12 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
     const cartasNaoUsadasLength = cartasNaoUsadas.length;
     const numeroAleatorio = randomNumber(0,cartasNaoUsadasLength); // Baseado No Limite de cartas disponível
     scope.carta = cartasNaoUsadas[numeroAleatorio];
-    scope.removeDoBaralho(scope.carta)
+
+    if(scope.carta){
+      scope.removeDoBaralho(scope.carta)
+    } else {
+      scope.fimDeJogo = true;
+    }
   }
 
   scope.removeDoBaralho = carta => {
