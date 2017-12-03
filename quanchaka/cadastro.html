@@ -119,11 +119,11 @@
     <div id="atuais">
       <h2>Cartas já cadastradas</h2>
       <input type="search" ng-model="busca" placeholder="procurar">
-      <ul>
+      <ol>
         <li ng-repeat="carta in cartas | filter: busca">
           {{carta.titulo}}
         </li>
-      </ul>
+      </ol>
     </div>
 
 
