@@ -15,6 +15,12 @@
     
       <label for="opcoes">Opções</label>
       <input id="opcoes" type="checkbox" ng-model="carta.temOpcoes" ng-change="fn_opcao.ativaOpcoes()">
+      <br>
+      
+      <label for="categoria">Categoria</label>
+      <select id="categoria" ng-model="carta.categoria">
+        <option ng-repeat="cat in categorias track by $index" value="{{cat}}">{{cat}}</option>
+      </select>
 
       <br>
 
