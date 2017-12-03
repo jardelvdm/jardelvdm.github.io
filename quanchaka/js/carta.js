@@ -15,8 +15,6 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
     scope.cartas.filter(c => c.usada == true).forEach(carta => {
           database.ref(`cartas/${carta.id}/usada`).set(false);
     })
-
-
   }
 
   scope.sorteiaCarta = () => {

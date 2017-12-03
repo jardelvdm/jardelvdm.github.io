@@ -1,5 +1,6 @@
 quanchaka.controller('main',['$scope','tools', function(scope,tools){
   window.scope = scope;
+  scope.tools = tools;
   scope.cartas = []
   scope.categorias = []
 
@@ -49,6 +50,18 @@ quanchaka.controller('main',['$scope','tools', function(scope,tools){
     categorias: [angular.copy(scope.modeloCategoria)]
   }
 
+  scope.fn_opcao = {
+    modelo:{
+      nome:'',
+      categorias: [angular.copy(scope.modeloCategoria)]
+    },
+    ativaOpcoes: () => scope.carta.opcoes = [],
+    adicionar: () => scope.carta.opcoes.push(angular.copy(scope.fn_opcao.modelo)),
+    remover: (index) => scope.carta.opcoes.splice(index,1),
+    adicionarCategoria: opcao => scope.carta.opcoes[opcao].categorias.push(angular.copy(scope.modeloCategoria)),
+    removerCategoria: (opcao,index) => scope.carta.opcoes[opcao].splice(index,1)
+  }
+
   scope.carta = angular.copy(scope.estruturaCarta)
         
   scope.adicionarCategoria = () => {
@@ -60,8 +73,6 @@ quanchaka.controller('main',['$scope','tools', function(scope,tools){
   }
   
   scope.escreveCarta = () => {
-    console.log('scope.carta',scope.carta)
-    
-    console.warn('escreveCarta',novaCarta.set(scope.carta))
+    novaCarta.set(scope.carta)
   }
 }])

@@ -8,47 +8,114 @@
     <h1>Cadastro de carta</h1>
     <form action="">
       <label for="titulo">Titulo</label>
-      <input type="text" ng-model="carta.titulo">
+      <input id="titulo" type="text" ng-model="carta.titulo">
+
+      <label for="xp">Experiência de vida</label>
+      <input id="xp" type="number" ng-model="carta.xp">
     
+      <label for="opcoes">Opções</label>
+      <input id="opcoes" type="checkbox" ng-model="carta.temOpcoes" ng-change="fn_opcao.ativaOpcoes()">
+
+      <br>
+
+      <label for="etapa">Etapas da vida</label>
+      <ul>
+        <li><label for="infancia"></label><input type="checkbox" id="infancia" ng-model="carta.etapaInfancia" ng-checked="true">infancia</li>
+        <li><label for="juventude"></label><input type="checkbox" id="juventude" ng-model="carta.etapaJuventude" ng-checked="true">juventude</li>
+        <li><label for="adulta"></label><input type="checkbox" id="adulta" ng-model="carta.etapaAdulta" ng-checked="true">adulta</li>
+        <li><label for="velhice"></label><input type="checkbox" id="velhice" ng-model="carta.etapaVelhice" ng-checked="true">velhice</li>
+      </ul>
+      
+
       <button ng-click="escreveCarta()">salvar</button>
       
       <hr>
-      Categorias: <button type="button" ng-click="adicionarCategoria()">Adicionar categoria</button> <br>
-      <ul>
-        <li ng-repeat="categoria in carta.categorias track by $index">
-          <label>Categoria</label>
-          <!-- <input type="text" ng-model="categoria.nome">  -->
-          <select ng-model="categoria.nome">
-            <option ng-repeat="cat in categorias track by $index" value="{{cat}}">{{cat}}</option>
-          </select>
-          <button ng-click="removerCategoria($index)">Remover categoria</button><br>
+      <div id="categorias" ng-if="!carta.temOpcoes">
+        Categorias: <button type="button" ng-click="adicionarCategoria()">Adicionar categoria</button> <br>
+        <ul>
+          <li ng-repeat="categoria in carta.categorias track by $index">
+            <label>Categoria</label>
+            <!-- <input type="text" ng-model="categoria.nome">  -->
+            <select ng-model="categoria.nome">
+              <option ng-repeat="cat in categorias track by $index" value="{{cat}}">{{cat}}</option>
+            </select>
+            <button ng-click="removerCategoria($index)">Remover categoria</button><br>
 
 
-          <h3>Fase infantil</h3>
-          <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.infancia.justificativa">
-          <label>pontos</label><input type="number" class="pontos" ng-model="categoria.infancia.pontos">
-          <label>disponivel</label><input type="checkbox" ng-checked="categoria.infancia.disponivel" ng-model="categoria.infancia.disponivel">
-          <br>
-          <h3>Fase juventude</h3>
-          <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.juventude.justificativa">
-          <label>pontos</label><input type="number" class="pontos" ng-model="categoria.juventude.pontos">
-          <label>disponivel</label><input type="checkbox" ng-checked="categoria.juventude.disponivel" ng-model="categoria.juventude.disponivel">
-          <br>
-          <h3>Fase adulta</h3>
-          <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.adulto.justificativa">
-          <label>pontos</label><input type="number" class="pontos" ng-model="categoria.adulto.pontos">
-          <label>disponivel</label><input type="checkbox" ng-checked="categoria.adulto.disponivel" ng-model="categoria.adulto.disponivel">
-          <br>
-          <h3>Fase velhice</h3>
-          <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.velhice.justificativa">
-          <label>pontos</label><input type="number" class="pontos" ng-model="categoria.velhice.pontos">
-          <label>disponivel</label><input type="checkbox" ng-checked="categoria.velhice.disponivel" ng-model="categoria.velhice.disponivel">
-          <hr>
-        </li>
-      </ul>
+            <h3>Fase infantil</h3>
+            <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.infancia.justificativa">
+            <label>pontos</label><input type="number" class="pontos" ng-model="categoria.infancia.pontos">
+            <label>disponivel</label><input type="checkbox" ng-checked="categoria.infancia.disponivel" ng-model="categoria.infancia.disponivel">
+            <br>
+            <h3>Fase juventude</h3>
+            <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.juventude.justificativa">
+            <label>pontos</label><input type="number" class="pontos" ng-model="categoria.juventude.pontos">
+            <label>disponivel</label><input type="checkbox" ng-checked="categoria.juventude.disponivel" ng-model="categoria.juventude.disponivel">
+            <br>
+            <h3>Fase adulta</h3>
+            <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.adulto.justificativa">
+            <label>pontos</label><input type="number" class="pontos" ng-model="categoria.adulto.pontos">
+            <label>disponivel</label><input type="checkbox" ng-checked="categoria.adulto.disponivel" ng-model="categoria.adulto.disponivel">
+            <br>
+            <h3>Fase velhice</h3>
+            <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.velhice.justificativa">
+            <label>pontos</label><input type="number" class="pontos" ng-model="categoria.velhice.pontos">
+            <label>disponivel</label><input type="checkbox" ng-checked="categoria.velhice.disponivel" ng-model="categoria.velhice.disponivel">
+            <hr>
+          </li>
+        </ul>
+      </div>
+      <div id="opcoes" ng-if="carta.temOpcoes">
+        <h2>Decisões possíveis</h2> <button type="button" ng-click="fn_opcao.adicionar()">Adicionar nova opção</button> <br>
+        <ul>
+          <li ng-repeat="opcao in carta.opcoes track by $index" in="carta.opcoes">
+            <label for="nome_opcao_{{$index}}">Nome</label>
+            <input id="nome_opcao_{{$index}}" type="text" ng-model="opcao.nome">            
+
+            <div class="categoriasOpcao">
+              Categorias: <button type="button" ng-click="fn_opcao.adicionarCategoria($index)">Adicionar categoria</button> <br>
+              <ul>
+                <li ng-repeat="categoria in opcao.categorias track by $index">
+                  <label>Categoria</label>
+                  <!-- <input type="text" ng-model="categoria.nome">  -->
+                  <select ng-model="categoria.nome">
+                    <option ng-repeat="cat in categorias track by $index" value="{{cat}}">{{cat}}</option>
+                  </select>
+                  <button ng-click="fn_opcao.removerCategoria($index)">Remover categoria</button><br>
+
+
+                  <h3>Fase infantil</h3>
+                  <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.infancia.justificativa">
+                  <label>pontos</label><input type="number" class="pontos" ng-model="categoria.infancia.pontos">
+                  <label>disponivel</label><input type="checkbox" ng-checked="categoria.infancia.disponivel" ng-model="categoria.infancia.disponivel">
+                  <br>
+                  <h3>Fase juventude</h3>
+                  <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.juventude.justificativa">
+                  <label>pontos</label><input type="number" class="pontos" ng-model="categoria.juventude.pontos">
+                  <label>disponivel</label><input type="checkbox" ng-checked="categoria.juventude.disponivel" ng-model="categoria.juventude.disponivel">
+                  <br>
+                  <h3>Fase adulta</h3>
+                  <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.adulto.justificativa">
+                  <label>pontos</label><input type="number" class="pontos" ng-model="categoria.adulto.pontos">
+                  <label>disponivel</label><input type="checkbox" ng-checked="categoria.adulto.disponivel" ng-model="categoria.adulto.disponivel">
+                  <br>
+                  <h3>Fase velhice</h3>
+                  <label>justificativa</label> <input type="text" class="justificativa" ng-model="categoria.velhice.justificativa">
+                  <label>pontos</label><input type="number" class="pontos" ng-model="categoria.velhice.pontos">
+                  <label>disponivel</label><input type="checkbox" ng-checked="categoria.velhice.disponivel" ng-model="categoria.velhice.disponivel">
+                  <hr>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
     </form>
 
-    
+    <br>
+    <hr>
+    <br>
+
     <div id="atuais">
       <h2>Cartas já cadastradas</h2>
       <input type="search" ng-model="busca" placeholder="procurar">
