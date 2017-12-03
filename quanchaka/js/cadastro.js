@@ -55,7 +55,12 @@ quanchaka.controller('main',['$scope','tools', function(scope,tools){
       nome:'',
       categorias: [angular.copy(scope.modeloCategoria)]
     },
-    ativaOpcoes: () => scope.carta.opcoes = [],
+    ativaOpcoes: () => {
+      scope.carta.opcoes = []
+      for (let x = scope.carta.categorias.length; x >= 0; x--){
+        scope.carta.categorias.splice(x,1)
+      }
+    },
     adicionar: () => scope.carta.opcoes.push(angular.copy(scope.fn_opcao.modelo)),
     remover: (index) => scope.carta.opcoes.splice(index,1),
     adicionarCategoria: opcao => scope.carta.opcoes[opcao].categorias.push(angular.copy(scope.modeloCategoria)),
