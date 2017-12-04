@@ -17,19 +17,24 @@ body {
 
 #carta {
 	&, .frente, .verso {
-		width: 100%;
-		height: 100%;
+		// width: 100vw;
+		width: 476px;
+		height: 100vh;
 		position: absolute;
 		background: #fff;		
+
+	    margin: auto;
+	    left: 0;
+	    right: 0;
 	}
 
 	.frente, .verso{
-	    height: 86.7%;
-	    margin: auto;
-	    top: 0;
-	    bottom: 0;
-	    right: 0;
-	    left: 0;
+	    // height: 86.7%;
+	    // margin: auto;
+	    // top: 0;
+	    // bottom: 0;
+	    // right: 0;
+	    // left: 0;
 	}
 
 	.frente{
@@ -101,6 +106,6 @@ body {
 		outline: none;
 
 		background: url('../imgs/verso_carta.jpg') center no-repeat;
-		background-size: 100% auto;
+		background-size: contain;
 	}
 }
