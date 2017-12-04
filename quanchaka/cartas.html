@@ -2,19 +2,46 @@
 	<head>
 		<title>Quanchaka</title>
 		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="stylesheets/cartas.css">
 	</head>
 	<body data-ng-controller="carta">
 		<h1>Carta</h1>
 
-		<header>
-			<ul>
-				<li><button ng-click="sorteiaCarta()">Sortear carta</button></li>
-				<li><button></button></li>
-			</ul>
-		</header>
+		<div id="carta">
+			<div class="frente {{carta.classe}}" ng-show="carta && mostraCarta">
+				<article class="infos">
+					<div class="xp">XP: {{carta.xp}}</div>
+				</article>
+				<article class="thumb"></article>
+				<!-- <article class="titulo"></article> -->
+				<article class="conteudo">
+					{{carta.titulo}}
 
-		<div id="carta" ng-if="carta">
-			{{carta.titulo}}
+					<div class="categoriasAfetadas" ng-if="!carta.opcoes">
+						<ul>
+							<li ng-repeat="categoria in carta.categorias">
+								{{categoria.nome}}: {{categoria[etapa].pontos}}
+							</li>
+						</ul>
+					</div>
+
+					<div class="opcoes" ng-if="carta.opcoes">
+						<ul>
+							<li ng-repeat="opcao in carta.opcoes">
+								<strong>{{opcao.nome}}</strong>
+								<ul>
+									<li ng-repeat="categoria in opcao.categorias">
+										{{categoria.nome}}: {{categoria[etapa].pontos}}
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</article>
+			</div>
+
+			<button class="verso" ng-show="!mostraCarta" ng-click="sorteiaCarta()"></button>
 		</div>
 
 		<div id="fimDeJogo" ng-if="fimDeJogo">

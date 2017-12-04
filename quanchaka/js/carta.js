@@ -2,6 +2,7 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
   window.scope = scope;
   scope.cartas = []
   scope.carta = null
+  scope.mostraCarta = false
 
   scope.embaralhar = () => refCartas.on('value',data => {
     scope.cartas = objToArray(data.val());
@@ -23,12 +24,34 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
     const numeroAleatorio = randomNumber(0,cartasNaoUsadasLength); // Baseado No Limite de cartas disponível
     scope.carta = cartasNaoUsadas[numeroAleatorio];
 
+    scope.etapas = ['adulto','infancia','juventude','velhice'];
+    scope.etapa = scope.etapas[0];
+
+    if(!scope.carta.categoria || scope.carta.categoria == "Saúde"){
+      scope.carta.classe = 'saude';
+    } else if(scope.carta.categoria == "Financeiro"){
+        scope.carta.classe = 'financeiro';
+    } else if(scope.carta.categoria == "Profissional"){
+        scope.carta.classe = 'profissional';
+    } else if(scope.carta.categoria == "Psicológico"){
+        scope.carta.classe = 'psicologico';
+    } else if(scope.carta.categoria == "Relações"){
+        scope.carta.classe = 'relacoes';
+    } else if(scope.carta.categoria == "Ética"){
+        scope.carta.classe = 'etica';
+    } else {
+      console.log('erro')
+    }
+    scope.mostraCarta = true;
+
     if(scope.carta){
       scope.removeDoBaralho(scope.carta)
     } else {
       scope.fimDeJogo = true;
     }
   }
+
+  scope.proximaJogada = () => scope.mostraCarta = false;
 
   scope.removeDoBaralho = carta => {
     carta.usada = true;
