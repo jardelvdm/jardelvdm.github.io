@@ -103,3 +103,52 @@ body {
   background: url("../imgs/verso_carta.jpg") center no-repeat;
   background-size: contain;
 }
+
+/* entire container, keeps perspective */
+/* line 116, ../sass/cartas.scss */
+#carta {
+  perspective: 1000px;
+}
+
+/* flip the pane when hovered */
+/* line 120, ../sass/cartas.scss */
+#carta.flipada .flipper {
+  transform: rotateY(180deg);
+}
+
+/* line 124, ../sass/cartas.scss */
+#carta, .frente, .verso {
+  width: 320px;
+  height: 480px;
+}
+
+/* flip speed goes here */
+/* line 130, ../sass/cartas.scss */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide verso of pane during swap */
+/* line 138, ../sass/cartas.scss */
+.frente, .verso {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* frente pane, placed above verso */
+/* line 147, ../sass/cartas.scss */
+.frente {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(180deg);
+}
+
+/* verso, initially hidden pane */
+/* line 154, ../sass/cartas.scss */
+.verso {
+  transform: rotateY(0deg);
+}

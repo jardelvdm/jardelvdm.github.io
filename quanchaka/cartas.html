@@ -8,47 +8,50 @@
 	<body data-ng-controller="carta">
 		<h1>Carta</h1>
 
-		<div id="carta">
-			<div class="frente {{carta.classe}}" ng-show="carta && mostraCarta">
-				<article class="infos">
-					<div class="xp">XP: {{carta.xp}}</div>
-				</article>
-				<article class="thumb"></article>
-				<!-- <article class="titulo"></article> -->
-				<article class="conteudo">
-					{{carta.titulo}}
+		<div id="carta" ng-class="{'flipada': mostraCarta}">
+			<div class="flipper">
+				<div class="frente {{carta.classe}}">
+					<article class="infos">
+						<div class="xp" ng-click="proximaJogada()">XP: {{carta.xp}}</div>
+					</article>
+					<article class="thumb"></article>
 
-					<div class="categoriasAfetadas" ng-if="!carta.opcoes">
-						<ul>
-							<li ng-repeat="categoria in carta.categorias">
-								{{categoria.nome}}: {{categoria[etapa].pontos}}
-							</li>
-						</ul>
-					</div>
+					<!-- <article class="titulo"></article> -->
 
-					<div class="opcoes" ng-if="carta.opcoes">
-						<ul>
-							<li ng-repeat="opcao in carta.opcoes">
-								<strong>{{opcao.nome}}</strong>
-								<ul>
-									<li ng-repeat="categoria in opcao.categorias">
-										{{categoria.nome}}: {{categoria[etapa].pontos}}
-									</li>
-								</ul>
-							</li>
-						</ul>
+					<article class="conteudo">
+						{{carta.titulo}}
+
+						<div class="categoriasAfetadas" ng-if="!carta.opcoes">
+							<ul>
+								<li ng-repeat="categoria in carta.categorias">
+									{{categoria.nome}}: {{categoria[etapa].pontos}}
+								</li>
+							</ul>
+						</div>
+
+						<div class="opcoes" ng-if="carta.opcoes">
+							<ul>
+								<li ng-repeat="opcao in carta.opcoes">
+									<strong>{{opcao.nome}}</strong>
+									<ul>
+										<li ng-repeat="categoria in opcao.categorias">
+											{{categoria.nome}}: {{categoria[etapa].pontos}}
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</article>
+
+					<div id="fimDeJogo" ng-if="fimDeJogo">
+						Fim de jogo!
+						<button ng-click="recomecarJogo()">Recomeçar jogo</button>
 					</div>
-				</article>
+				</div>
+
+				<button class="verso" ng-click="sorteiaCarta()"></button>
 			</div>
-
-			<button class="verso" ng-show="!mostraCarta" ng-click="sorteiaCarta()"></button>
 		</div>
-
-		<div id="fimDeJogo" ng-if="fimDeJogo">
-			Fim de jogo!
-			<button ng-click="recomecarJogo()">Recomeçar jogo</button>
-		</div>
-	
 
 		<script src="js/firebase.js"></script>
 		<script src="js/jquery.min.js"></script>

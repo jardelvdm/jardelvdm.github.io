@@ -4,6 +4,8 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
   scope.carta = null
   scope.mostraCarta = false
 
+  window.screenTop = 1
+
   scope.embaralhar = () => refCartas.on('value',data => {
     scope.cartas = objToArray(data.val());
     scope.cartasLength = scope.cartas.length;
@@ -51,7 +53,10 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
     }
   }
 
-  scope.proximaJogada = () => scope.mostraCarta = false;
+  scope.proximaJogada = () => {
+    scope.mostraCarta = false;
+    document.getElementsByClassName('conteudo')[0].scrollTo(0,0);
+  }
 
   scope.removeDoBaralho = carta => {
     carta.usada = true;

@@ -109,3 +109,48 @@ body {
 		background-size: contain;
 	}
 }
+
+
+
+/* entire container, keeps perspective */
+#carta {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	#carta.flipada .flipper {
+		transform: rotateY(180deg);
+	}
+
+#carta, .frente, .verso {
+	width: 320px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide verso of pane during swap */
+.frente, .verso {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* frente pane, placed above verso */
+.frente {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(180deg);
+}
+
+/* verso, initially hidden pane */
+.verso {
+	transform: rotateY(0deg);
+}
