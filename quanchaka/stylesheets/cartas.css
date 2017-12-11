@@ -50,93 +50,97 @@ body {
   line-height: 1.5;
 }
 /* line 62, ../sass/cartas.scss */
+#carta .frente article.infos .categoria {
+  float: left;
+}
+/* line 66, ../sass/cartas.scss */
 #carta .frente article.infos .xp {
   float: right;
 }
-/* line 66, ../sass/cartas.scss */
+/* line 70, ../sass/cartas.scss */
 #carta .frente article.thumb {
   margin: 0 auto 9px;
   height: 20rem;
   background: center no-repeat;
   background-color: #FFF;
 }
-/* line 72, ../sass/cartas.scss */
+/* line 76, ../sass/cartas.scss */
 #carta .frente article.titulo {
   margin: 0 auto 9px;
   height: 5rem;
   padding: 0.5rem;
 }
-/* line 77, ../sass/cartas.scss */
+/* line 81, ../sass/cartas.scss */
 #carta .frente article.conteudo {
   margin: 0 auto 9px;
   height: 20rem;
   padding: 0.5rem;
   overflow-y: auto;
 }
-/* line 85, ../sass/cartas.scss */
+/* line 89, ../sass/cartas.scss */
 #carta .frente.saude {
   background: url("../imgs/bg-saude.png");
 }
-/* line 87, ../sass/cartas.scss */
+/* line 91, ../sass/cartas.scss */
 #carta .frente.saude .thumb {
   background-image: url("../imgs/icone_saude.png");
 }
-/* line 91, ../sass/cartas.scss */
+/* line 95, ../sass/cartas.scss */
 #carta .frente.financeiro {
   background: url("../imgs/bg-financeiro.png");
 }
-/* line 93, ../sass/cartas.scss */
+/* line 97, ../sass/cartas.scss */
 #carta .frente.financeiro .thumb {
   background-image: url("../imgs/icone_financeiro.png");
 }
-/* line 97, ../sass/cartas.scss */
+/* line 101, ../sass/cartas.scss */
 #carta .frente.profissional {
   background: url("../imgs/bg-profissional.png");
 }
-/* line 99, ../sass/cartas.scss */
+/* line 103, ../sass/cartas.scss */
 #carta .frente.profissional .thumb {
   background-image: url("../imgs/icone_profissional.png");
 }
-/* line 103, ../sass/cartas.scss */
+/* line 107, ../sass/cartas.scss */
 #carta .frente.psicologico {
   background: url("../imgs/bg-psicologico.png");
 }
-/* line 105, ../sass/cartas.scss */
+/* line 109, ../sass/cartas.scss */
 #carta .frente.psicologico .thumb {
   background-image: url("../imgs/icone_psicologico.png");
 }
-/* line 109, ../sass/cartas.scss */
+/* line 113, ../sass/cartas.scss */
 #carta .frente.relacoes {
   background: url("../imgs/bg-relacoes.png");
 }
-/* line 111, ../sass/cartas.scss */
+/* line 115, ../sass/cartas.scss */
 #carta .frente.relacoes .thumb {
   background-image: url("../imgs/icone_relacoes.png");
 }
-/* line 115, ../sass/cartas.scss */
+/* line 119, ../sass/cartas.scss */
 #carta .frente.etica {
   background: url("../imgs/bg-etica.png");
 }
-/* line 117, ../sass/cartas.scss */
+/* line 121, ../sass/cartas.scss */
 #carta .frente.etica .thumb {
   background-image: url("../imgs/icone_etica.png");
 }
-/* line 121, ../sass/cartas.scss */
+/* line 125, ../sass/cartas.scss */
 #carta .frente.click {
   background: #FFD700;
 }
-/* line 123, ../sass/cartas.scss */
+/* line 127, ../sass/cartas.scss */
 #carta .frente.click .thumb {
   background-image: url("../imgs/icone_: .png");
 }
-/* line 128, ../sass/cartas.scss */
+/* line 132, ../sass/cartas.scss */
 #carta .verso {
   border: 0;
   outline: none;
   background: url("../imgs/verso_carta.jpg") center no-repeat;
   background-size: contain;
 }
-/* line 136, ../sass/cartas.scss */
+/* line 140, ../sass/cartas.scss */
 #carta .verso .bt {
   background: #C9C73A;
   padding: 10px;
@@ -146,19 +150,19 @@ body {
 }
 
 /* entire container, keeps perspective */
-/* line 149, ../sass/cartas.scss */
+/* line 153, ../sass/cartas.scss */
 #carta {
   perspective: 1000px;
 }
 
 /* flip the pane when hovered */
-/* line 153, ../sass/cartas.scss */
+/* line 157, ../sass/cartas.scss */
 #carta.flipada .flipper {
   transform: rotateY(180deg);
 }
 
 /* flip speed goes here */
-/* line 163, ../sass/cartas.scss */
+/* line 167, ../sass/cartas.scss */
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
@@ -166,7 +170,7 @@ body {
 }
 
 /* hide verso of pane during swap */
-/* line 171, ../sass/cartas.scss */
+/* line 175, ../sass/cartas.scss */
 .frente, .verso {
   backface-visibility: hidden;
   position: absolute;
@@ -175,7 +179,7 @@ body {
 }
 
 /* frente pane, placed above verso */
-/* line 180, ../sass/cartas.scss */
+/* line 184, ../sass/cartas.scss */
 .frente {
   z-index: 2;
   /* for firefox 31 */
@@ -183,12 +187,12 @@ body {
 }
 
 /* verso, initially hidden pane */
-/* line 187, ../sass/cartas.scss */
+/* line 191, ../sass/cartas.scss */
 .verso {
   transform: rotateY(0deg);
 }
 
-/* line 191, ../sass/cartas.scss */
+/* line 195, ../sass/cartas.scss */
 header {
   text-align: center;
   padding: 20px 0;

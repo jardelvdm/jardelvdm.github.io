@@ -52,8 +52,11 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
     scope.etapas = ['adulto','infancia','juventude','velhice'];
     scope.etapa = scope.etapas[0];
 
+    console.log('categoria',scope.carta.categoria)
+
     if(!scope.carta.categoria || scope.carta.categoria == "Saúde"){
       scope.carta.classe = 'saude';
+      scope.carta.categoria = "Saúde";
     } else if(scope.carta.categoria == "Financeiro"){
         scope.carta.classe = 'financeiro';
     } else if(scope.carta.categoria == "Profissional"){
