@@ -15,6 +15,7 @@ firebase.initializeApp(config);
 const database = firebase.database();
 const refCartas = database.ref('cartas/');
 const refCategorias = database.ref('categorias/');
+const refClick = database.ref('click/');
 const novaCarta = refCartas.push();
 const objToArray = obj => Object.keys(obj).map(item => {
     obj[item]

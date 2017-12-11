@@ -8,6 +8,11 @@
 	<body data-ng-controller="carta">
 		<h1>Carta</h1>
 
+		<header ng-show="started">
+			<button ng-click="embaralhar()">Reiniciar jogo</button>
+			<button ng-click="carta_click()">Carta click</button>
+		</header>
+
 		<div id="carta" ng-class="{'flipada': mostraCarta}">
 			<div class="flipper">
 				<div class="frente {{carta.classe}}">
@@ -49,7 +54,10 @@
 					</div>
 				</div>
 
-				<button class="verso" ng-click="sorteiaCarta()"></button>
+				<button ng-show="!started" class="verso" ng-click="started = true;sorteiaCarta()">
+					<span class="bt">Começar o jogo!</span>
+				</button>
+				<button ng-show="started" class="verso" ng-click="sorteiaCarta()"></button>
 			</div>
 		</div>
 

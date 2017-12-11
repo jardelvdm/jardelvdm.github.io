@@ -1,8 +1,10 @@
 quanchaka.controller('carta',['$scope','tools', function(scope,tools){
   window.scope = scope;
   scope.cartas = []
+  scope.cartasClick = []
   scope.carta = null
   scope.mostraCarta = false
+  scope.started = false
 
   window.screenTop = 1
 
@@ -12,11 +14,32 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
   },error => console.log('error',error))
   scope.embaralhar();
 
+  refClick.on('value',data => {
+    scope.cartasClick = objToArray(data.val());
+    scope.cartasLength = scope.cartas.length;
+    console.warn('scope.cartasClick',scope.cartasClick)
+  },error => console.log('error',error))
+
+
+  scope.carta_click = () => {
+    const cartasNaoUsadas = scope.cartasClick.filter(c => c.usada == false);
+    const cartasNaoUsadasLength = cartasNaoUsadas.length;
+    const numeroAleatorio = randomNumber(0,cartasNaoUsadasLength); // Baseado No Limite de cartas disponível
+    scope.carta = cartasNaoUsadas[numeroAleatorio];
+
+    scope.mostraCarta = true;
+    scope.carta.classe = 'click';
+  }
+
   scope.recomecarJogo = () => {
     const listaCartas = refCartas.orderByChild("titulo");
 
     scope.cartas.filter(c => c.usada == true).forEach(carta => {
           database.ref(`cartas/${carta.id}/usada`).set(false);
+    })
+
+    scope.cartasClick.filter(c => c.usada == true).forEach(carta => {
+          database.ref(`click/${carta.id}/usada`).set(false);
     })
   }
 

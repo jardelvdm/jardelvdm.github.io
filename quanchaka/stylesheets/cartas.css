@@ -96,34 +96,40 @@ body {
 #carta .frente.etica {
   background: url("../imgs/bg-etica.png");
 }
-/* line 103, ../sass/cartas.scss */
+/* line 102, ../sass/cartas.scss */
+#carta .frente.click {
+  background: #FFD700;
+}
+/* line 106, ../sass/cartas.scss */
 #carta .verso {
   border: 0;
   outline: none;
   background: url("../imgs/verso_carta.jpg") center no-repeat;
   background-size: contain;
 }
+/* line 114, ../sass/cartas.scss */
+#carta .verso .bt {
+  background: #C9C73A;
+  padding: 10px;
+  font-size: 20px;
+  color: #FFF;
+  border-radius: 5px;
+}
 
 /* entire container, keeps perspective */
-/* line 116, ../sass/cartas.scss */
+/* line 127, ../sass/cartas.scss */
 #carta {
   perspective: 1000px;
 }
 
 /* flip the pane when hovered */
-/* line 120, ../sass/cartas.scss */
+/* line 131, ../sass/cartas.scss */
 #carta.flipada .flipper {
   transform: rotateY(180deg);
 }
 
-/* line 124, ../sass/cartas.scss */
-#carta, .frente, .verso {
-  width: 320px;
-  height: 480px;
-}
-
 /* flip speed goes here */
-/* line 130, ../sass/cartas.scss */
+/* line 141, ../sass/cartas.scss */
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
@@ -131,7 +137,7 @@ body {
 }
 
 /* hide verso of pane during swap */
-/* line 138, ../sass/cartas.scss */
+/* line 149, ../sass/cartas.scss */
 .frente, .verso {
   backface-visibility: hidden;
   position: absolute;
@@ -140,7 +146,7 @@ body {
 }
 
 /* frente pane, placed above verso */
-/* line 147, ../sass/cartas.scss */
+/* line 158, ../sass/cartas.scss */
 .frente {
   z-index: 2;
   /* for firefox 31 */
@@ -148,7 +154,17 @@ body {
 }
 
 /* verso, initially hidden pane */
-/* line 154, ../sass/cartas.scss */
+/* line 165, ../sass/cartas.scss */
 .verso {
   transform: rotateY(0deg);
+}
+
+/* line 169, ../sass/cartas.scss */
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+/* line 173, ../sass/cartas.scss */
+header button {
+  margin: 0 20px;
 }

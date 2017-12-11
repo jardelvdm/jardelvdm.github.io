@@ -99,6 +99,9 @@ body {
 		&.etica{
 			background: url('../imgs/bg-etica.png');
 		}
+		&.click{
+			background: #FFD700;
+		}
 	}
 	.verso{
 		// reset button
@@ -107,6 +110,14 @@ body {
 
 		background: url('../imgs/verso_carta.jpg') center no-repeat;
 		background-size: contain;
+
+		.bt {
+			background: #C9C73A;
+		    padding: 10px;
+		    font-size: 20px;
+		    color: #FFF;
+		    border-radius: 5px;
+		}
 	}
 }
 
@@ -122,8 +133,8 @@ body {
 	}
 
 #carta, .frente, .verso {
-	width: 320px;
-	height: 480px;
+	// width: 320px;
+	// height: 480px;
 }
 
 /* flip speed goes here */
@@ -153,4 +164,13 @@ body {
 /* verso, initially hidden pane */
 .verso {
 	transform: rotateY(0deg);
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+
+    button {
+    	margin: 0 20px;
+    }
 }
