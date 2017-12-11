@@ -57,57 +57,86 @@ body {
 #carta .frente article.thumb {
   margin: 0 auto 9px;
   height: 20rem;
-  background: url("../imgs/bg.png");
+  background: center no-repeat;
+  background-color: #FFF;
 }
-/* line 71, ../sass/cartas.scss */
+/* line 72, ../sass/cartas.scss */
 #carta .frente article.titulo {
   margin: 0 auto 9px;
   height: 5rem;
   padding: 0.5rem;
 }
-/* line 76, ../sass/cartas.scss */
+/* line 77, ../sass/cartas.scss */
 #carta .frente article.conteudo {
   margin: 0 auto 9px;
   height: 20rem;
   padding: 0.5rem;
   overflow-y: auto;
 }
-/* line 84, ../sass/cartas.scss */
+/* line 85, ../sass/cartas.scss */
 #carta .frente.saude {
   background: url("../imgs/bg-saude.png");
 }
 /* line 87, ../sass/cartas.scss */
+#carta .frente.saude .thumb {
+  background-image: url("../imgs/icone_saude.png");
+}
+/* line 91, ../sass/cartas.scss */
 #carta .frente.financeiro {
   background: url("../imgs/bg-financeiro.png");
 }
-/* line 90, ../sass/cartas.scss */
+/* line 93, ../sass/cartas.scss */
+#carta .frente.financeiro .thumb {
+  background-image: url("../imgs/icone_financeiro.png");
+}
+/* line 97, ../sass/cartas.scss */
 #carta .frente.profissional {
   background: url("../imgs/bg-profissional.png");
 }
-/* line 93, ../sass/cartas.scss */
+/* line 99, ../sass/cartas.scss */
+#carta .frente.profissional .thumb {
+  background-image: url("../imgs/icone_profissional.png");
+}
+/* line 103, ../sass/cartas.scss */
 #carta .frente.psicologico {
   background: url("../imgs/bg-psicologico.png");
 }
-/* line 96, ../sass/cartas.scss */
+/* line 105, ../sass/cartas.scss */
+#carta .frente.psicologico .thumb {
+  background-image: url("../imgs/icone_psicologico.png");
+}
+/* line 109, ../sass/cartas.scss */
 #carta .frente.relacoes {
   background: url("../imgs/bg-relacoes.png");
 }
-/* line 99, ../sass/cartas.scss */
+/* line 111, ../sass/cartas.scss */
+#carta .frente.relacoes .thumb {
+  background-image: url("../imgs/icone_relacoes.png");
+}
+/* line 115, ../sass/cartas.scss */
 #carta .frente.etica {
   background: url("../imgs/bg-etica.png");
 }
-/* line 102, ../sass/cartas.scss */
+/* line 117, ../sass/cartas.scss */
+#carta .frente.etica .thumb {
+  background-image: url("../imgs/icone_etica.png");
+}
+/* line 121, ../sass/cartas.scss */
 #carta .frente.click {
   background: #FFD700;
 }
-/* line 106, ../sass/cartas.scss */
+/* line 123, ../sass/cartas.scss */
+#carta .frente.click .thumb {
+  background-image: url("../imgs/icone_: .png");
+}
+/* line 128, ../sass/cartas.scss */
 #carta .verso {
   border: 0;
   outline: none;
   background: url("../imgs/verso_carta.jpg") center no-repeat;
   background-size: contain;
 }
-/* line 114, ../sass/cartas.scss */
+/* line 136, ../sass/cartas.scss */
 #carta .verso .bt {
   background: #C9C73A;
   padding: 10px;
@@ -117,19 +146,19 @@ body {
 }
 
 /* entire container, keeps perspective */
-/* line 127, ../sass/cartas.scss */
+/* line 149, ../sass/cartas.scss */
 #carta {
   perspective: 1000px;
 }
 
 /* flip the pane when hovered */
-/* line 131, ../sass/cartas.scss */
+/* line 153, ../sass/cartas.scss */
 #carta.flipada .flipper {
   transform: rotateY(180deg);
 }
 
 /* flip speed goes here */
-/* line 141, ../sass/cartas.scss */
+/* line 163, ../sass/cartas.scss */
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
@@ -137,7 +166,7 @@ body {
 }
 
 /* hide verso of pane during swap */
-/* line 149, ../sass/cartas.scss */
+/* line 171, ../sass/cartas.scss */
 .frente, .verso {
   backface-visibility: hidden;
   position: absolute;
@@ -146,7 +175,7 @@ body {
 }
 
 /* frente pane, placed above verso */
-/* line 158, ../sass/cartas.scss */
+/* line 180, ../sass/cartas.scss */
 .frente {
   z-index: 2;
   /* for firefox 31 */
@@ -154,17 +183,13 @@ body {
 }
 
 /* verso, initially hidden pane */
-/* line 165, ../sass/cartas.scss */
+/* line 187, ../sass/cartas.scss */
 .verso {
   transform: rotateY(0deg);
 }
 
-/* line 169, ../sass/cartas.scss */
+/* line 191, ../sass/cartas.scss */
 header {
   text-align: center;
   padding: 20px 0;
-}
-/* line 173, ../sass/cartas.scss */
-header button {
-  margin: 0 20px;
 }

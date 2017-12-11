@@ -66,7 +66,8 @@ body {
 			&.thumb{
 				margin: 0 auto 9px;
     			height: 20rem;
-    			background: url('../imgs/bg.png');
+    			background: center no-repeat;
+    			background-color: #FFF;
 			}
 			&.titulo{
 				margin: 0 auto 9px;
@@ -83,24 +84,45 @@ body {
 
 		&.saude{
 			background: url('../imgs/bg-saude.png');
+			.thumb {
+				background-image: url('../imgs/icone_saude.png');
+			}
 		}
 		&.financeiro{
 			background: url('../imgs/bg-financeiro.png');
+			.thumb {
+				background-image: url('../imgs/icone_financeiro.png');
+			}
 		}
 		&.profissional{
 			background: url('../imgs/bg-profissional.png');
+			.thumb {
+				background-image: url('../imgs/icone_profissional.png');
+			}
 		}
 		&.psicologico{
 			background: url('../imgs/bg-psicologico.png');
+			.thumb {
+				background-image: url('../imgs/icone_psicologico.png');
+			}
 		}
 		&.relacoes{
 			background: url('../imgs/bg-relacoes.png');
+			.thumb {
+				background-image: url('../imgs/icone_relacoes.png');
+			}
 		}
 		&.etica{
 			background: url('../imgs/bg-etica.png');
+			.thumb {
+				background-image: url('../imgs/icone_etica.png');
+			}
 		}
 		&.click{
 			background: #FFD700;
+			.thumb {
+				background-image: url('../imgs/icone_: .png');
+			}
 		}
 	}
 	.verso{
@@ -169,8 +191,4 @@ body {
 header {
     text-align: center;
     padding: 20px 0;
-
-    button {
-    	margin: 0 20px;
-    }
 }
