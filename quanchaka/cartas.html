@@ -13,6 +13,10 @@
 			<!-- <button ng-click="carta_click()">Carta click</button> -->
 		</header>
 
+		<div id="jogador" style="position: absolute; top:1rem;left:0;font-size: 2rem"> 
+			{{jogador.xp + '-' + etapa.nome}}
+		</div>
+
 		<div id="carta" ng-class="{'flipada': mostraCarta}">
 			<div class="flipper">
 				<div class="frente {{carta.classe}}">
@@ -61,6 +65,14 @@
 				<button ng-show="started" class="verso" ng-click="sorteiaCarta()"></button>
 			</div>
 		</div>
+
+		<!-- tela 1 -->
+			<!-- carta personalidade -->
+			<!-- guarda em variáveis os valores vindos da personalidade -->
+			<!-- calcula os valores com base no objeto já guardado na memória -->
+		<!-- guarda o progresso do usuário em XP -->
+			<!-- calcula o progresso do usuário em XP -->
+			<!-- controla o fluxo de cartas conforme o xp armazenado -->
 
 		<script src="js/firebase.js"></script>
 		<script src="js/jquery.min.js"></script>
