@@ -15,6 +15,13 @@
 
 		<div id="jogador" style="position: absolute; top:1rem;left:0;font-size: 2rem"> 
 			{{jogador.xp + '-' + etapa.nome}}
+
+			<ul style="padding: 0; line-height: 1;">
+				<li ng-repeat="categoria in jogador.categorias">
+					<strong ng-bind="categoria.nome"></strong>
+					<span ng-bind="categoria.pontos"></span>
+				</li>
+			</ul>
 		</div>
 
 		<div id="carta" ng-class="{'flipada': mostraCarta}">
@@ -34,7 +41,7 @@
 						<div class="categoriasAfetadas" ng-if="!carta.opcoes">
 							<ul>
 								<li ng-repeat="categoria in carta.categorias">
-									{{categoria.nome}}: {{categoria[etapa].pontos}}
+									{{categoria.nome}}: {{categoria[etapa.nome].pontos}}
 								</li>
 							</ul>
 						</div>
