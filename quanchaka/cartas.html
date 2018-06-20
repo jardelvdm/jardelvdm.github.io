@@ -49,10 +49,15 @@
 						<div class="opcoes" ng-if="carta.opcoes">
 							<ul>
 								<li ng-repeat="opcao in carta.opcoes">
-									<strong>{{opcao.nome}}</strong>
-									<ul>
+									<button 
+										ng-click="pontuaCategorias(opcao.categorias);
+												  opcao.selecionada = true"
+										style="background: none;border: none;padding: 0; outline: none; color: #FFF;font-size: 16px;    text-align: left;">
+										<strong>{{opcao.nome}}</strong>
+									</button>
+									<ul ng-show="opcao.selecionada">
 										<li ng-repeat="categoria in opcao.categorias">
-											{{categoria.nome}}: {{categoria[etapa].pontos}}
+											{{categoria.nome}}: {{categoria[etapa.nome].pontos}}
 										</li>
 									</ul>
 								</li>
