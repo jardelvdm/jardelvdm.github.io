@@ -197,3 +197,34 @@ header {
   text-align: center;
   padding: 20px 0;
 }
+
+/* line 201, ../sass/cartas.scss */
+#jogador {
+  line-height: 1;
+  top: 1rem;
+  left: 0;
+  font-size: 2rem;
+  width: 476px;
+  margin: auto;
+  text-align: center;
+}
+/* line 210, ../sass/cartas.scss */
+#jogador ul {
+  padding: 0;
+  line-height: 1;
+  width: 100%;
+  text-align: center;
+}
+/* line 216, ../sass/cartas.scss */
+#jogador ul li {
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  padding: 0 5px;
+}
+/* line 222, ../sass/cartas.scss */
+#jogador ul li span {
+  display: block;
+  line-height: 2;
+  font-size: 20px;
+}

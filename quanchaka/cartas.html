@@ -12,11 +12,10 @@
 			<button ng-click="embaralhar()">Reiniciar jogo</button>
 			<!-- <button ng-click="carta_click()">Carta click</button> -->
 		</header>
+		<div id="jogador"> 
+			XP total: {{jogador.xp + ' - fase: ' + etapa.nome}}
 
-		<div id="jogador" style="position: absolute; top:1rem;left:0;font-size: 2rem"> 
-			{{jogador.xp + '-' + etapa.nome}}
-
-			<ul style="padding: 0; line-height: 1;">
+			<ul>
 				<li ng-repeat="categoria in jogador.categorias">
 					<strong ng-bind="categoria.nome"></strong>
 					<span ng-bind="categoria.pontos"></span>

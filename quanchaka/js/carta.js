@@ -90,10 +90,10 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
   scope.sorteiaCarta = () => {
     // filtra as cartas não usadas e que tenham pontuações na fase atual
     const cartasNaoUsadas = scope.cartas
-      .filter(carta => carta.opcoes)
-      // .filter(carta => carta.usada == false)
-      // .filter(carta => carta.categorias)
-      // .filter(carta => carta.categorias.some(cat => cat[scope.etapa.nome].pontos > 0));
+      // .filter(carta => carta.opcoes)
+      .filter(carta => carta.usada == false)
+      .filter(carta => carta.categorias)
+      .filter(carta => carta.categorias.some(cat => cat[scope.etapa.nome].pontos > 0));
     const cartasNaoUsadasLength = cartasNaoUsadas.length;
     const numeroAleatorio = randomNumber(0,cartasNaoUsadasLength); // Baseado No Limite de cartas disponível
     scope.carta = cartasNaoUsadas[numeroAleatorio];

@@ -196,3 +196,34 @@ header {
     text-align: center;
     padding: 20px 0;
 }
+
+
+#jogador {
+	line-height: 1;
+	top:1rem;
+	left:0;
+	font-size: 2rem;
+	width: 476px;
+	margin: auto;
+	text-align: center;
+
+	ul {
+		padding: 0;
+		line-height: 1;
+		width: 100%;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			text-align: center;
+			font-size: 16px;
+			padding: 0 5px;
+
+			span {
+				display: block;
+				line-height: 2;
+				font-size: 20px;
+			}
+		}		
+	}	
+}
