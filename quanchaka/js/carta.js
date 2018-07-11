@@ -12,6 +12,9 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
   scope.embaralhar = () => refCartas.on('value',data => {
     scope.cartas = objToArray(data.val());
     scope.cartasLength = scope.cartas.length;
+
+    setTimeout(() => location.reload(),200)
+    
   },error => console.log('error',error))
   scope.embaralhar();
 
@@ -91,13 +94,14 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
     // filtra as cartas não usadas e que tenham pontuações na fase atual
     const cartasNaoUsadas = scope.cartas
       // .filter(carta => carta.opcoes)
-      .filter(carta => carta.usada == false)
-      .filter(carta => carta.categorias)
-      .filter(carta => carta.categorias.some(cat => cat[scope.etapa.nome].pontos > 0));
+      .filter(carta => carta.usada == false);
     const cartasNaoUsadasLength = cartasNaoUsadas.length;
     const numeroAleatorio = randomNumber(0,cartasNaoUsadasLength); // Baseado No Limite de cartas disponível
     scope.carta = cartasNaoUsadas[numeroAleatorio];
     
+    console.log(numeroAleatorio,cartasNaoUsadas)
+    console.log(scope.carta)
+
     if (scope.carta) {
       scope.atualizaProgressoJogador();
 
