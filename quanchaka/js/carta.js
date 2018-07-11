@@ -12,9 +12,6 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
   scope.embaralhar = () => refCartas.on('value',data => {
     scope.cartas = objToArray(data.val());
     scope.cartasLength = scope.cartas.length;
-
-    setTimeout(() => location.reload(),200)
-    
   },error => console.log('error',error))
   scope.embaralhar();
 
@@ -140,5 +137,22 @@ quanchaka.controller('carta',['$scope','tools', function(scope,tools){
 
     const c = refCartas.orderByChild("titulo").equalTo(carta.titulo)
     database.ref(`cartas/${carta.id}/usada`).set(true);
+  }
+
+  scope.ajustaPonto = catPonto => {
+    var pontos = 0;
+    console.log('pontos',pontos)
+    console.log('catPonto',catPonto)
+    if(catPonto.pontos < 0){
+      pontos = catPonto.pontos;
+      console.log('if',pontos)
+    } else {
+      catPonto.pontos += 1;
+      pontos = catPonto.pontos;
+      console.log('else',pontos)
+    }
+
+    console.log(pontos)
+    return pontos;
   }
 }])

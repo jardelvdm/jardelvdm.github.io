@@ -39,7 +39,7 @@
 
 						<div class="categoriasAfetadas" ng-if="!carta.opcoes">
 							<ul>
-								<li ng-repeat="categoria in carta.categorias" ng-show="categoria[etapa.nome].pontos > 0">
+								<li ng-repeat="categoria in carta.categorias" ng-init="ajustaPonto(categoria[etapa.nome])">
 									{{categoria.nome}}: {{categoria[etapa.nome].pontos}}
 								</li>
 							</ul>
@@ -55,7 +55,7 @@
 										<strong>{{opcao.nome}}</strong>
 									</button>
 									<ul ng-show="opcao.selecionada">
-										<li ng-repeat="categoria in opcao.categorias" ng-show="categoria[etapa.nome].pontos > 0">
+										<li ng-repeat="categoria in opcao.categorias" ng-init="ajustaPonto(categoria[etapa.nome])">
 											{{categoria.nome}}: {{categoria[etapa.nome].pontos}}
 										</li>
 									</ul>
